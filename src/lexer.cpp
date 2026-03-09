@@ -81,8 +81,15 @@ void Lexer::scanToken() {
             break;
 
         case '/':
-            addToken(TokenType::SLASH);
-            break;
+            if (match('/')) {
+            // consume characters until end of line
+            while (peek() != '\n' && !isAtEnd()) {
+            advance();
+        }
+    } else {
+        addToken(TokenType::SLASH);
+    }
+    break;
 
         case '"':
             string();
