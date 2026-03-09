@@ -24,6 +24,9 @@ enum class TokenType {
 
     // One or two character tokens
     EQUAL_EQUAL,
+    BANG_EQUAL,
+    GREATER_EQUAL,
+    LESS_EQUAL,
 
     // Literals
     IDENTIFIER,

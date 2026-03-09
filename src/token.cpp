@@ -20,6 +20,9 @@ std::string tokenTypeToString(TokenType type) {
         case TokenType::LESS: return "LESS";
         case TokenType::EQUAL: return "EQUAL";
         case TokenType::EQUAL_EQUAL: return "EQUAL_EQUAL";
+        case TokenType::BANG_EQUAL: return "BANG_EQUAL";
+        case TokenType::GREATER_EQUAL: return "GREATER_EQUAL";
+        case TokenType::LESS_EQUAL: return "LESS_EQUAL";
 
         case TokenType::IDENTIFIER: return "IDENTIFIER";
         case TokenType::NUMBER: return "NUMBER";

@@ -1,10 +1,13 @@
 var x = 10;
 
-if (x == 10) {
-    print(x);//comenttt
+if (x >= 5) {
+    print(x);
 }
 
-var name = "yusuf";
-print("hello world");
+if (x <= 20) {
+    print(x);
+}
 
-var pi = 3.14;//comment
+if (x != 0) {
+    print(x);
+}

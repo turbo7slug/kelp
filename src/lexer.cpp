@@ -96,11 +96,21 @@ void Lexer::scanToken() {
             break;
 
         case '>':
+            if (match('=')) {
+            addToken(TokenType::GREATER_EQUAL);
+            }    
+            else {
             addToken(TokenType::GREATER);
+            }
             break;
 
         case '<':
+            if (match('=')) {
+            addToken(TokenType::LESS_EQUAL);
+            }    
+            else {
             addToken(TokenType::LESS);
+            }
             break;
 
         case '=':
@@ -110,6 +120,12 @@ void Lexer::scanToken() {
         else {
         addToken(TokenType::EQUAL);
         }
+            break;
+
+        case '!':
+            if (match('=')) {
+            addToken(TokenType::BANG_EQUAL);
+            }       
             break;
 
         case ' ':
