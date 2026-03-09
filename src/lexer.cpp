@@ -1,6 +1,11 @@
 #include "lexer.h"
 #include <unordered_map>
 #include <cctype>
+#include <iostream>
+
+void reportError(int line, const std::string& message) {
+    std::cerr << "[Line " << line << "] Error: " << message << std::endl;
+}
 
 Lexer::Lexer(const std::string& source) : source(source) {}
 
@@ -145,6 +150,9 @@ void Lexer::scanToken() {
             else if (isalpha(c)) {
                 identifier();
             }
+            else{
+                 reportError(line, std::string("Unexpected character '") + c + "'");
+            }
             break;
     }
 }
@@ -206,7 +214,7 @@ void Lexer::string() {
     }
 
     if (isAtEnd()) {
-        // unterminated string
+        reportError(line, "Unterminated string.");
         return;
     }
 
