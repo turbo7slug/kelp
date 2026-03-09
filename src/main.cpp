@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include "lexer.h"
 
 int main(int argc, char* argv[]) {
 
@@ -18,11 +19,17 @@ int main(int argc, char* argv[]) {
 
     std::stringstream buffer;
     buffer << file.rdbuf();
-
     std::string source = buffer.str();
 
-    std::cout << "=== File Content ===" << std::endl;
-    std::cout << source << std::endl;
+    Lexer lexer(source);
+    auto tokens = lexer.scanTokens();
+    
+for (const auto& token : tokens) {
+    std::cout << tokenTypeToString(token.type)
+              << "    "
+              << token.lexeme
+              << std::endl;
+}
 
     return 0;
 }
