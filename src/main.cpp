@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     
 for (const auto& token : tokens) {
     std::cout << tokenTypeToString(token.type)
-              << "    "
+              << " "
               << token.lexeme
               << std::endl;
 }

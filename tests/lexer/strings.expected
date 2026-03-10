@@ -1,0 +1,16 @@
+VAR var
+IDENTIFIER name
+EQUAL =
+STRING "yusuf"
+SEMICOLON ;
+VAR var
+IDENTIFIER greeting
+EQUAL =
+STRING "hello world"
+SEMICOLON ;
+IDENTIFIER print
+LEFT_PAREN (
+STRING "welcome to kelp"
+RIGHT_PAREN )
+SEMICOLON ;
+EOF
